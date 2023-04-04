@@ -1,0 +1,21 @@
+{
+  "name": "express-mongo-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "postinstall": "cp ./config/config.yml.sample ./config/config.yml && cp ./config/.env.sample ./config/.env"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-validator": "^6.15.0",
+    "js-yaml": "^4.1.0",
+    "mongoose": "^7.0.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
