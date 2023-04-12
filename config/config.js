@@ -12,8 +12,8 @@ try {
   config = yaml.load(
     fs.readFileSync(path.join(__dirname, "config.yml"), "utf8")
   );
-} catch (e) {
-  console.log(e);
+} catch (error) {
+  console.log(error.message);
 }
 
 const { protocol, host, port, api_prefix } = config.app[appEnv];

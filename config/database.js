@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
-const { dbConfig } = require("./config");
+const { dbConfig } = require("./config.js");
 
 const connectDatabase = async () => {
   try {
     await mongoose.connect(
-      `mongodb+srv://${dbConfig.username}:${dbConfig.password}@${dbConfig.host}/?retryWrites=true&w=majority`,
+      `mongodb+srv://${dbConfig.username}:${dbConfig.password}@${dbConfig.host}/Book_Stor_App?retryWrites=true&w=majority`,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -15,7 +15,7 @@ const connectDatabase = async () => {
   } catch (err) {
     console.error(err.message);
     // Exit process with failure
-    process.exit(1);
+    process.exit(1); 
   }
 };
 
