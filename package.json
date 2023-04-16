@@ -5,10 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "encrypt:config": "TYPE=encrypt FILE_TO_BE_ENCRYPTED='./config/config.yml' node crypt.js",
+    "decrypt:config": "TYPE=decrypt FILE_TO_BE_DECRYPTED='./config/config.yml.enc' node crypt.js"
   },
-  "encrypt:config": "TYPE=encrypt FILE_TO_BE_ENCRYPTED='./config/config.yml' node crypt.js",
-  "decrypt:config": "TYPE=decrypt FILE_TO_BE_DECRYPTED='./config/config.yml.enc' node crypt.js",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
