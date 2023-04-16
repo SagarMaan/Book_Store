@@ -137,7 +137,7 @@ class OrderController {
             }
 
             let verifyOrder = await orderModel.findOne({_id : orderData._id });
-console.log(verifyOrder.orderData._id , verifyOrder.userId ,verifyOrder.cartData.userId)
+
             if (!verifyOrder) {
                 return res.status(400).send({ status: false, message: " Order is not exits with in your database. " });
             }

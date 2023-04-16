@@ -5,7 +5,7 @@ const { appConfig } = require("./config/config.js");
 const userRoute = require("./routes/user.js");
 const bookRoute = require("./routes/book.js");
 const reviewRoute = require("./routes/review.js");
-const cartRoute = require("./models/cart.js");
+const cartRoute = require("./routes/cart.js");
 const orderRoute = require("./routes/order.js");
 
 const connectDatabase = require("./config/database");

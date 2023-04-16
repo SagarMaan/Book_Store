@@ -184,8 +184,6 @@ class UserController {
 
     try {
 
-      if (req.userId) {
-
         let userId = req.userId
 
         let getDetails = await userModel.findById(userId)
@@ -195,8 +193,7 @@ class UserController {
         }
 
         return res.status(200).send({ status: true, message: " Get user detaisl successfully. ", data: getDetails })
-  
-      }
+ 
     } catch (error) {
 
       return res.status(500).send({ status: false, message: error.message })
