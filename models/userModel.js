@@ -3,11 +3,7 @@ const mongoose = require("mongoose")
 
 const userSchema = new mongoose.Schema(
     {
-        // title: {
-        //     type: String,
-        //     required: true,
-        //     enum: ["Mr.", "Mrs", "Miss"]
-        // },
+        
         firstName: {
             type: String,
             required: true,
@@ -33,20 +29,6 @@ const userSchema = new mongoose.Schema(
             type: Number,
             required: true,
             unique: true
-        },
-        address: {
-            street: {
-                type: String,
-                required: true
-            },
-            city: {
-                type: String,
-                required: true
-            },
-            pincode: {
-                type: Number,
-                required: true
-            }
         },
         isDeleted: {
             type: Boolean,

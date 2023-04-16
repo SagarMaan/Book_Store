@@ -30,22 +30,6 @@ const validatePhoneNumber = (Number) => {
 }
 
 
-//===================================== Pincode Regex Validation ===================================//
-
-
-const validatePincode = (pincode) => {
-  return (/^[1-9][0-9]{5}$/).test(pincode);
-}
-
-
-//===================================== Place Regex Validation ===================================//
-
-
-const validatePlace = (value) => {
-  return (/^[^\W\d_]+\.?(?:[-\s'’][^\W\d_]+\.?)*$/).test(value);
-}
-
-
 //===================================== Price Regex Validation ===================================//
 
 
@@ -55,7 +39,7 @@ const validatePrice = function (price) {
 
 
 
-module.exports = { validateName, validateEmail, validatePassword, validatePhoneNumber, validatePincode, validatePrice, validatePlace }
+module.exports = { validateName, validateEmail, validatePassword, validatePhoneNumber, validatePrice }
 
 
 

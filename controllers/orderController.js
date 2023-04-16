@@ -1,7 +1,8 @@
 const { isValidObjectId } = require("mongoose");
 
 const cartModel = require("../models/cartModel");
-const orderModel = require("../models/orderModel")
+const orderModel = require("../models/orderModel");
+const { verify } = require("jsonwebtoken");
 
 
 
@@ -135,14 +136,13 @@ class OrderController {
                 return res.status(400).send({ status: false, message: " Please enter valid oredrId. " });
             }
 
-            let verifyOrder = await orderModel.find({ _id: userId });
-            console.log(verifyOrder)
-
+            let verifyOrder = await orderModel.findOne({_id : orderData._id });
+console.log(verifyOrder.orderData._id , verifyOrder.userId ,verifyOrder.cartData.userId)
             if (!verifyOrder) {
-                return res.status(400).send({ status: false, message: " Order does not exits with this userId. " });
+                return res.status(400).send({ status: false, message: " Order is not exits with in your database. " });
             }
 
-            if (userId != verifyOrder.userId) {
+            if (userId != verifyOrder.cartData.userId) {
                 return res.status(404).send({ status: false, message: " Order doesn't exist with this user Id. " });
             }
 

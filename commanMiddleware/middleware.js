@@ -18,7 +18,7 @@ const isAuthenticated = async function (req, res, next) {
         let token = req.headers["x-auth-token"]
 
         if (!token) {
-            return res.status(400).send({ status: false, message: " Token must be present in the bearer. " })
+            return res.status(400).send({ status: false, message: " Token must be present in the header. " })
         }
 
         jwt.verify(token, "Ye ek secrt key h.", function (error, decodedToken) {
